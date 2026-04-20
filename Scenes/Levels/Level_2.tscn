@@ -1,0 +1,157 @@
+[gd_scene load_steps=7 format=3 uid="uid://cg3iocglplb7x"]
+
+[ext_resource type="Script" uid="uid://cjoncygs0748e" path="res://Scenes/Levels/Level.gd" id="1_4ju3q"]
+[ext_resource type="PackedScene" uid="uid://bgfu28srs74n6" path="res://Objects/teleport.tscn" id="2_n6t8q"]
+[ext_resource type="PackedScene" uid="uid://dljbox0qnu4rv" path="res://Objects/cross.tscn" id="2_ramdh"]
+[ext_resource type="Texture2D" uid="uid://bumcoh4fhd1qw" path="res://Assets/Level_2.png" id="3_jixyi"]
+[ext_resource type="PackedScene" uid="uid://c8lvc8ehcqsoj" path="res://Scenes/meta.tscn" id="4_axppo"]
+[ext_resource type="AudioStream" uid="uid://drg35etfonyt8" path="res://Assets/O_Zgrozo.ogg" id="6_4ju3q"]
+
+[node name="Level_2" type="Node2D"]
+script = ExtResource("1_4ju3q")
+
+[node name="Teleport4" parent="." instance=ExtResource("2_n6t8q")]
+position = Vector2(-202.844, 129.58)
+scale = Vector2(0.4, 0.4)
+exit_moving = true
+exit_speed = 1500
+
+[node name="Sprite2D" parent="Teleport4" index="0"]
+self_modulate = Color(0.0612662, 0.578101, 0.746089, 1)
+
+[node name="ExitPoint" parent="Teleport4" index="4"]
+position = Vector2(957.155, -1000)
+
+[node name="ExitA" parent="Teleport4" index="5"]
+position = Vector2(283.669, -1000)
+
+[node name="ExitB" parent="Teleport4" index="6"]
+position = Vector2(1692.87, -1000)
+
+[node name="Teleport2" parent="." instance=ExtResource("2_n6t8q")]
+position = Vector2(-206.943, 129.611)
+scale = Vector2(1.2, 0.28)
+moving = true
+speed = 300
+
+[node name="PointA" parent="Teleport2" index="2"]
+position = Vector2(0, -461.871)
+
+[node name="PointB" parent="Teleport2" index="3"]
+position = Vector2(0, 499.833)
+
+[node name="ExitPoint" parent="Teleport2" index="4"]
+position = Vector2(-131.61, -1450)
+
+[node name="ExitA" parent="Teleport2" index="5"]
+position = Vector2(96.6975, -1341.32)
+
+[node name="ExitB" parent="Teleport2" index="6"]
+position = Vector2(565.422, -1341.32)
+
+[node name="Teleport" parent="." instance=ExtResource("2_n6t8q")]
+position = Vector2(-431.51, 290.823)
+scale = Vector2(2.88, 0.28)
+
+[node name="ExitPoint" parent="Teleport" index="4"]
+position = Vector2(76.4459, -2038.82)
+
+[node name="Teleport3" parent="." instance=ExtResource("2_n6t8q")]
+position = Vector2(212.226, 292.791)
+scale = Vector2(7.04, 0.319999)
+exit_moving = true
+exit_speed = 600
+
+[node name="ExitPoint" parent="Teleport3" index="4"]
+position = Vector2(0, -1700)
+
+[node name="ExitA" parent="Teleport3" index="5"]
+position = Vector2(-42.9309, -1700)
+
+[node name="ExitB" parent="Teleport3" index="6"]
+position = Vector2(36.7702, -1700)
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(84.6758, -77.2006)
+
+[node name="Marker2D" type="Marker2D" parent="Spawner"]
+position = Vector2(-621.395, -200)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawner"]
+position = Vector2(-596.395, -200)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawner"]
+position = Vector2(-571.395, -200)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawner"]
+position = Vector2(-546.395, -200)
+
+[node name="Marker2D5" type="Marker2D" parent="Spawner"]
+position = Vector2(-521.395, -200)
+
+[node name="Marker2D6" type="Marker2D" parent="Spawner"]
+position = Vector2(-496.395, -200)
+
+[node name="Marker2D7" type="Marker2D" parent="Spawner"]
+position = Vector2(-471.395, -200)
+
+[node name="Marker2D8" type="Marker2D" parent="Spawner"]
+position = Vector2(-446.395, -200)
+
+[node name="Marker2D9" type="Marker2D" parent="Spawner"]
+position = Vector2(-421.395, -200)
+
+[node name="Marker2D10" type="Marker2D" parent="Spawner"]
+position = Vector2(-396.395, -200)
+
+[node name="Balls" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Tor2" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_jixyi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tor2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tor2/StaticBody2D"]
+polygon = PackedVector2Array(-921.618, -493.65, -479.97, -493.813, -480.872, -417.059, -663.9, -311.73, -633.707, -258.391, -480.244, -347.226, -480.326, 89.7917, -664.079, 196.135, -633.603, 248.79, -479.897, 160.405, -479.984, 493.777, -922.005, 493.681, -921.917, -125.129, -768.37, -35.6235, -737.668, -89.0179, -921.514, -194.906, -959.94, -194.63, -959.71, 540.024, -442.805, 541.034, -441.378, -539.996, -960.096, -538.84, -959.952, -194.681, -921.537, -194.978)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tor2/StaticBody2D"]
+polygon = PackedVector2Array(-441.291, -539.24, -220.208, -539.981, -222.296, 539.688, -442.178, 541.443, -441.958, 494.044, -258.065, 495.141, -258.112, -494.273, -441.091, -494.155)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Tor2/StaticBody2D"]
+polygon = PackedVector2Array(-221.555, 539.331, 959.231, 539.352, 959.39, -539.299, -220.137, -539.803, -219.687, -494.196, 922.523, -494.533, 922.795, 493.683, -221.06, 494.737)
+
+[node name="Cross" parent="." instance=ExtResource("2_ramdh")]
+position = Vector2(10.3855, -31.7777)
+
+[node name="Cross2" parent="." instance=ExtResource("2_ramdh")]
+position = Vector2(151.345, 57.9244)
+
+[node name="Cross3" parent="." instance=ExtResource("2_ramdh")]
+position = Vector2(309.757, -31.778)
+rev_side = true
+
+[node name="Cross4" parent="." instance=ExtResource("2_ramdh")]
+position = Vector2(443.489, 57.924)
+rev_side = true
+
+[node name="Cross5" parent="." instance=ExtResource("2_ramdh")]
+position = Vector2(307.639, 132.524)
+rev_side = true
+
+[node name="Cross6" parent="." instance=ExtResource("2_ramdh")]
+position = Vector2(13.3889, 132.524)
+
+[node name="Meta" parent="." instance=ExtResource("4_axppo")]
+position = Vector2(212.516, 256.1)
+scale = Vector2(0.133043, 0.362265)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4ju3q")
+
+[editable path="Teleport4"]
+[editable path="Teleport2"]
+[editable path="Teleport"]
+[editable path="Teleport3"]

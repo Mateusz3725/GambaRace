@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl54tnb53i31r"]
+
+[ext_resource type="Script" uid="uid://cpjo4ijgiokij" path="res://Scripts/Racers/orange.gd" id="1_m0tne"]
+[ext_resource type="Texture2D" uid="uid://dhokmyimtctih" path="res://Assets/RacerOutline.png" id="2_m0tne"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m0tne"]
+friction = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_16u8n"]
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["racer"]]
+collision_layer = 5
+physics_material_override = SubResource("PhysicsMaterial_m0tne")
+script = ExtResource("1_m0tne")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.501961, 0, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_m0tne")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_16u8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_16u8n")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

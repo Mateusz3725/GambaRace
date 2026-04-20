@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8lvc8ehcqsoj"]
+
+[ext_resource type="Script" uid="uid://crhwpmyrkas5o" path="res://Scripts/meta.gd" id="1_jqss0"]
+[ext_resource type="Texture2D" uid="uid://c4w4682fbkmqu" path="res://Assets/Rectangle.png" id="2_jqss0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqss0"]
+size = Vector2(1203.62, 103.811)
+
+[node name="Meta" type="Node2D"]
+script = ExtResource("1_jqss0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0.586993, 0.34467, 1)
+scale = Vector2(12.0355, 1.04658)
+texture = ExtResource("2_jqss0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_jqss0")
+
+[node name="PointA" type="Marker2D" parent="."]
+
+[node name="PointB" type="Marker2D" parent="."]

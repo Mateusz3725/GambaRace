@@ -1,0 +1,132 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7k5bpo7wttn2"]
+
+[ext_resource type="Script" uid="uid://bs4v4ejnp1gdi" path="res://Scripts/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://cwc4f810x6vi5" path="res://Assets/SelectButton.png" id="2_8saeu"]
+[ext_resource type="Texture2D" uid="uid://b42v56a0c584b" path="res://Assets/GR_Tlo.png" id="2_ghw46"]
+[ext_resource type="Texture2D" uid="uid://dmau8ynunf2wh" path="res://Assets/Button.png" id="3_ghw46"]
+[ext_resource type="AudioStream" uid="uid://drg35etfonyt8" path="res://Assets/O_Zgrozo.ogg" id="5_df05h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xim88"]
+texture = ExtResource("2_ghw46")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_df05h"]
+texture = ExtResource("2_8saeu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8saeu"]
+texture = ExtResource("2_8saeu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8um5k"]
+texture = ExtResource("3_ghw46")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df05h"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tt5f1")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1155.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_xim88")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = -20.9039
+offset_right = 131.5
+offset_bottom = 65.0962
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_df05h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8saeu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8um5k")
+text = "START"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = 69.752
+offset_right = 131.5
+offset_bottom = 167.752
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxTexture_df05h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8saeu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8um5k")
+text = "RESET 
+MONEY"
+autowrap_mode = 2
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = 172.53
+offset_right = 131.5
+offset_bottom = 270.53
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxTexture_df05h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8saeu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8um5k")
+text = "MUSIC: ON"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_df05h")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 718.0
+offset_top = 372.0
+offset_right = 1075.0
+offset_bottom = 622.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="Label"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_df05h")
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+autowrap_mode = 2
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="mouse_entered" from="Panel/Button3" to="." method="_on_button_3_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Button3" to="." method="_on_button_3_mouse_exited"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_button_3_pressed"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxjp8iypjkkmj"]
+
+[ext_resource type="Script" uid="uid://cwcvqkfxlkh8i" path="res://Prototypowanie/level_1_prototyp.gd" id="1_85d1k"]
+[ext_resource type="Texture2D" uid="uid://ejq80ndvtfma" path="res://Prototypowanie/Tor_1_Prototyp.png" id="1_at1da"]
+
+[node name="Level_1_Prototyp" type="Node2D"]
+script = ExtResource("1_85d1k")
+
+[node name="Tor1Prototyp" type="Sprite2D" parent="."]
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_at1da")
+
+[node name="Camera2D" type="Camera2D" parent="Tor1Prototyp"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tor1Prototyp"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tor1Prototyp/StaticBody2D"]
+scale = Vector2(3.0303, 3.0303)
+polygon = PackedVector2Array(167.704, -215.045, 91.9813, -154.441, 168.268, -139.97, 169.397, -94.5301, 83.9953, -37.9786, 166.292, -20.584, 168.55, 60.1358, 85.3263, 121.076, 167.986, 132.388, 167.986, 307.375, -169.852, 307.093, -167.876, 194.763, -8.41217, 195.892, -169.287, 119.97, -167.594, 38.4035, -74.3938, 21.9164, -167.876, -39.4939, -168.158, -113.722, -72.3973, -126.49, -167.594, -189.644, -169.005, -309.312, 167.704, -307.337, 167.986, -316.933, -178.601, -315.804, -178.887, 316.523, 177.304, 317.206, 179.695, -316.63, 168.099, -316.88)
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(1.50262, -176.183)
+
+[node name="Marker2D" type="Marker2D" parent="Spawner"]
+
+[node name="Marker2D2" type="Marker2D" parent="Spawner"]
+
+[node name="Marker2D3" type="Marker2D" parent="Spawner"]
+
+[node name="Marker2D4" type="Marker2D" parent="Spawner"]
+
+[node name="Marker2D5" type="Marker2D" parent="Spawner"]
+
+[node name="Marker2D6" type="Marker2D" parent="Spawner"]
+
+[node name="Marker2D7" type="Marker2D" parent="Spawner"]
+
+[node name="Marker2D8" type="Marker2D" parent="Spawner"]
+
+[node name="Marker2D9" type="Marker2D" parent="Spawner"]
+
+[node name="Marker2D10" type="Marker2D" parent="Spawner"]
+
+[node name="Balls" type="Node2D" parent="."]

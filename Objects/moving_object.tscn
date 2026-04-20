@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ed6oti05horn"]
+
+[ext_resource type="Texture2D" uid="uid://c4w4682fbkmqu" path="res://Assets/Rectangle.png" id="1_4xwaf"]
+[ext_resource type="Script" uid="uid://bou2aamhocqat" path="res://Scripts/moving_object.gd" id="1_ywo8j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywo8j"]
+
+[node name="MovingObject" type="CharacterBody2D" node_paths=PackedStringArray("point_a", "point_b")]
+script = ExtResource("1_ywo8j")
+point_a = NodePath("PointA")
+point_b = NodePath("PointB")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_4xwaf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_ywo8j")
+
+[node name="PointA" type="Marker2D" parent="."]
+position = Vector2(-454.85, 0)
+
+[node name="PointB" type="Marker2D" parent="."]
+position = Vector2(447.15, 7.14999)

@@ -1,0 +1,463 @@
+[gd_scene load_steps=12 format=3 uid="uid://dw54s3ucqniim"]
+
+[ext_resource type="Script" uid="uid://cfbostxs28me1" path="res://Scripts/gamba_ui.gd" id="1_tty2e"]
+[ext_resource type="Texture2D" uid="uid://beg2efijw7fog" path="res://Assets/Black.png" id="2_d2opu"]
+[ext_resource type="Texture2D" uid="uid://cwc4f810x6vi5" path="res://Assets/SelectButton.png" id="3_7400c"]
+[ext_resource type="Texture2D" uid="uid://dmau8ynunf2wh" path="res://Assets/Button.png" id="4_yybh4"]
+[ext_resource type="AudioStream" uid="uid://drg35etfonyt8" path="res://Assets/O_Zgrozo.ogg" id="5_yybh4"]
+[ext_resource type="Texture2D" uid="uid://dhokmyimtctih" path="res://Assets/RacerOutline.png" id="6_reuxl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wrnd5"]
+texture = ExtResource("2_d2opu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_reuxl"]
+texture = ExtResource("3_7400c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0vja"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18qjt"]
+texture = ExtResource("4_yybh4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7400c"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.59039
+offset_top = 71.3255
+offset_right = -5.59033
+offset_bottom = 71.3254
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tty2e")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -105.0
+offset_right = 83.0
+offset_bottom = 66.0001
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wrnd5")
+
+[node name="Money" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -308.162
+offset_right = 20.0
+offset_bottom = -259.162
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = 63.8342
+offset_right = 127.5
+offset_bottom = 140.834
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_reuxl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c0vja")
+theme_override_styles/normal = SubResource("StyleBoxTexture_18qjt")
+text = "START"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = 157.925
+offset_right = 127.5
+offset_bottom = 234.925
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxTexture_reuxl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c0vja")
+theme_override_styles/normal = SubResource("StyleBoxTexture_18qjt")
+text = "MAIN MENU"
+
+[node name="Winner" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 114.887
+offset_top = -151.942
+offset_right = 330.887
+offset_bottom = -104.942
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Tournament winner:"
+
+[node name="SpinBoxWinner" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 394.727
+offset_top = -143.942
+offset_right = 481.289
+offset_bottom = -112.942
+grow_horizontal = 2
+grow_vertical = 2
+step = 50.0
+
+[node name="ChooseWinner" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 182.387
+offset_top = -105.942
+offset_right = 263.387
+offset_bottom = -78.9415
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Loser" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -399.401
+offset_top = -151.942
+offset_right = -279.401
+offset_bottom = -104.942
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Race Loser:"
+
+[node name="SpinBoxLoser" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.013
+offset_top = -143.942
+offset_right = -156.451
+offset_bottom = -112.942
+grow_horizontal = 2
+grow_vertical = 2
+step = 50.0
+
+[node name="ChooseLoser" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -354.322
+offset_top = -106.186
+offset_right = -272.322
+offset_bottom = -76.1862
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7400c")
+
+[node name="Info" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.5
+offset_top = -30.9999
+offset_right = 29.5
+offset_bottom = -7.99994
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+
+[node name="LoserInfo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -241.205
+offset_right = 20.0
+offset_bottom = -199.205
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.85098, 0, 1)
+theme_override_font_sizes/font_size = 25
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_yybh4")
+
+[node name="Container" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Blue" type="Sprite2D" parent="Container"]
+self_modulate = Color(0, 0.435294, 1, 1)
+position = Vector2(150, 150)
+texture = ExtResource("6_reuxl")
+
+[node name="Label" type="Label" parent="Container/Blue"]
+self_modulate = Color(0, 0.435294, 1, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -39.1793
+offset_right = -29.5
+offset_bottom = -16.1793
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "BLUE"
+
+[node name="Cyan" type="Sprite2D" parent="Container"]
+self_modulate = Color(0, 1, 1, 1)
+position = Vector2(350, 150)
+texture = ExtResource("6_reuxl")
+
+[node name="Label" type="Label" parent="Container/Cyan"]
+self_modulate = Color(0, 1, 1, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -39.1793
+offset_right = -29.5
+offset_bottom = -16.1793
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "CYAN"
+
+[node name="Green" type="Sprite2D" parent="Container"]
+self_modulate = Color(0.133333, 0.772549, 0.368627, 1)
+position = Vector2(550, 150)
+texture = ExtResource("6_reuxl")
+
+[node name="Label" type="Label" parent="Container/Green"]
+self_modulate = Color(0.133333, 0.772549, 0.368627, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -39.1793
+offset_right = -29.5
+offset_bottom = -16.1793
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "GREEN"
+
+[node name="Lime" type="Sprite2D" parent="Container"]
+self_modulate = Color(0.764706, 0.960784, 0.313726, 1)
+position = Vector2(750, 150)
+texture = ExtResource("6_reuxl")
+
+[node name="Label" type="Label" parent="Container/Lime"]
+self_modulate = Color(0.764706, 0.960784, 0.313726, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -39.1793
+offset_right = -29.5
+offset_bottom = -16.1793
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "LIME"
+
+[node name="Yellow" type="Sprite2D" parent="Container"]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(950, 150)
+texture = ExtResource("6_reuxl")
+
+[node name="Label" type="Label" parent="Container/Yellow"]
+self_modulate = Color(1, 1, 0, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -39.1793
+offset_right = -29.5
+offset_bottom = -16.1793
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "YELLOW"
+
+[node name="Red" type="Sprite2D" parent="Container"]
+self_modulate = Color(0.870588, 0, 0, 1)
+position = Vector2(150, 350)
+texture = ExtResource("6_reuxl")
+
+[node name="Label" type="Label" parent="Container/Red"]
+self_modulate = Color(0.870588, 0, 0, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -39.1793
+offset_right = -29.5
+offset_bottom = -16.1793
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "RED"
+
+[node name="Orange" type="Sprite2D" parent="Container"]
+self_modulate = Color(1, 0.501961, 0, 1)
+position = Vector2(350, 350)
+texture = ExtResource("6_reuxl")
+
+[node name="Label" type="Label" parent="Container/Orange"]
+self_modulate = Color(1, 0.501961, 0, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -39.1793
+offset_right = -29.5
+offset_bottom = -16.1793
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "ORANGE"
+
+[node name="Pink" type="Sprite2D" parent="Container"]
+self_modulate = Color(0.933333, 0.482353, 0.866667, 1)
+position = Vector2(550, 350)
+texture = ExtResource("6_reuxl")
+
+[node name="Label" type="Label" parent="Container/Pink"]
+self_modulate = Color(0.933333, 0.482353, 0.866667, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -39.1793
+offset_right = -29.5
+offset_bottom = -16.1793
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "PINK"
+
+[node name="Lavender" type="Sprite2D" parent="Container"]
+self_modulate = Color(0.709804, 0.482353, 1, 1)
+position = Vector2(750, 350)
+texture = ExtResource("6_reuxl")
+
+[node name="Label" type="Label" parent="Container/Lavender"]
+self_modulate = Color(0.709804, 0.482353, 1, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -39.1793
+offset_right = -29.5
+offset_bottom = -16.1793
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "LAVENDER"
+
+[node name="Purple" type="Sprite2D" parent="Container"]
+self_modulate = Color(0.447059, 0, 0.878431, 1)
+position = Vector2(950, 350)
+texture = ExtResource("6_reuxl")
+
+[node name="Label" type="Label" parent="Container/Purple"]
+self_modulate = Color(0.447059, 0, 0.878431, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -39.1793
+offset_right = -29.5
+offset_bottom = -16.1793
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "PURPLE"
+
+[node name="AllRacers" type="Button" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+offset_left = 15.8335
+offset_right = 136.833
+offset_bottom = 31.0
+text = "Racers' Design:"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="SpinBoxWinner" to="." method="_on_spin_box_winner_value_changed"]
+[connection signal="item_selected" from="ChooseWinner" to="." method="_on_choose_winner_item_selected"]
+[connection signal="value_changed" from="SpinBoxLoser" to="." method="_on_spin_box_loser_value_changed"]
+[connection signal="item_selected" from="ChooseLoser" to="." method="_on_choose_loser_item_selected"]
+[connection signal="mouse_entered" from="AllRacers" to="." method="_on_all_racers_mouse_entered"]
+[connection signal="mouse_exited" from="AllRacers" to="." method="_on_all_racers_mouse_exited"]

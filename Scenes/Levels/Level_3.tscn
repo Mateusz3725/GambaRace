@@ -1,0 +1,182 @@
+[gd_scene load_steps=7 format=3 uid="uid://bh67rk3wojg0k"]
+
+[ext_resource type="Script" uid="uid://cjoncygs0748e" path="res://Scenes/Levels/Level.gd" id="1_x5s1r"]
+[ext_resource type="PackedScene" uid="uid://c8lvc8ehcqsoj" path="res://Scenes/meta.tscn" id="2_x5s1r"]
+[ext_resource type="PackedScene" uid="uid://bgfu28srs74n6" path="res://Objects/teleport.tscn" id="3_62evj"]
+[ext_resource type="Texture2D" uid="uid://blw8voovqbiam" path="res://Assets/Level_3.png" id="4_ckbkd"]
+[ext_resource type="AudioStream" uid="uid://drg35etfonyt8" path="res://Assets/O_Zgrozo.ogg" id="5_x5s1r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5s1r"]
+size = Vector2(21.0293, 21.1118)
+
+[node name="Level_3" type="Node2D"]
+script = ExtResource("1_x5s1r")
+
+[node name="Teleport" parent="." instance=ExtResource("3_62evj")]
+position = Vector2(-2.92822, 279.643)
+scale = Vector2(11.12, 0.44)
+exit_moving = true
+exit_speed = 1500
+
+[node name="ExitPoint" parent="Teleport" index="4"]
+position = Vector2(0.258, -1265)
+
+[node name="ExitA" parent="Teleport" index="5"]
+position = Vector2(-41.1117, -1265)
+
+[node name="ExitB" parent="Teleport" index="6"]
+position = Vector2(39.8585, -1265)
+
+[node name="Meta" parent="." instance=ExtResource("2_x5s1r")]
+position = Vector2(-0.424103, 220.349)
+scale = Vector2(0.07, 0.7)
+moving = true
+speed = 250
+
+[node name="PointA" parent="Meta" index="2"]
+position = Vector2(-6953.96, 0)
+
+[node name="PointB" parent="Meta" index="3"]
+position = Vector2(6783.14, 0)
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(84.6758, -77.2006)
+
+[node name="Marker2D" type="Marker2D" parent="Spawner"]
+position = Vector2(-544.801, -170)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawner"]
+position = Vector2(-444.801, -170)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawner"]
+position = Vector2(-344.801, -170)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawner"]
+position = Vector2(-244.801, -170)
+
+[node name="Marker2D5" type="Marker2D" parent="Spawner"]
+position = Vector2(-144.801, -170)
+
+[node name="Marker2D6" type="Marker2D" parent="Spawner"]
+position = Vector2(-44.801, -170)
+
+[node name="Marker2D7" type="Marker2D" parent="Spawner"]
+position = Vector2(55.199, -170)
+
+[node name="Marker2D8" type="Marker2D" parent="Spawner"]
+position = Vector2(155.199, -170)
+
+[node name="Marker2D9" type="Marker2D" parent="Spawner"]
+position = Vector2(255.199, -170)
+
+[node name="Marker2D10" type="Marker2D" parent="Spawner"]
+position = Vector2(355.199, -170)
+
+[node name="Balls" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Tor3" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_ckbkd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tor3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tor3/StaticBody2D"]
+polygon = PackedVector2Array(-905.846, 487.852, 905.988, 488.147, 905.96, -487.878, -905.392, -488.129, -905.828, -539.756, 959.891, -539.701, 959.704, 540.092, -959.819, 539.972, -960.152, -539.885, -906.017, -539.473)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(-9.8141, 23.5744)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(-458.05, -126.027)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(-607.602, 23.377)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(-756.931, 172.893)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(-457.796, 172.536)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(-308.493, 23.1063)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(-159.047, -126.102)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(139.756, -126.076)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(-159.238, 172.8)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(139.853, 172.985)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(289.171, 23.477)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(438.826, -126.195)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(439.041, 172.763)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(588.09, 23.0519)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Tor3/StaticBody2D"]
+position = Vector2(737.655, -125.851)
+rotation = 0.785398
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_x5s1r")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_x5s1r")
+
+[editable path="Teleport"]
+[editable path="Meta"]

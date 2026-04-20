@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=3 uid="uid://phu4qj843vy6"]
+
+[ext_resource type="Script" uid="uid://cjoncygs0748e" path="res://Scenes/Levels/Level.gd" id="1_x0leq"]
+[ext_resource type="PackedScene" uid="uid://bgfu28srs74n6" path="res://Objects/teleport.tscn" id="2_nsth2"]
+[ext_resource type="Texture2D" uid="uid://cuafn4g5111b" path="res://Assets/Level_7.png" id="2_uo23w"]
+[ext_resource type="PackedScene" uid="uid://c8lvc8ehcqsoj" path="res://Scenes/meta.tscn" id="3_dfjpj"]
+[ext_resource type="AudioStream" uid="uid://drg35etfonyt8" path="res://Assets/O_Zgrozo.ogg" id="5_x0leq"]
+
+[node name="Level_7" type="Node2D"]
+script = ExtResource("1_x0leq")
+
+[node name="Meta" parent="." instance=ExtResource("3_dfjpj")]
+position = Vector2(-542.482, 269.187)
+rotation = -1.98546
+scale = Vector2(0.0607853, -1)
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(84.6758, -77.2006)
+
+[node name="Marker2D" type="Marker2D" parent="Spawner"]
+position = Vector2(350, -70)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawner"]
+position = Vector2(350, -80)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawner"]
+position = Vector2(350, -90)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawner"]
+position = Vector2(400, -90)
+
+[node name="Marker2D5" type="Marker2D" parent="Spawner"]
+position = Vector2(400, -100)
+
+[node name="Marker2D6" type="Marker2D" parent="Spawner"]
+position = Vector2(400, -110)
+
+[node name="Marker2D7" type="Marker2D" parent="Spawner"]
+position = Vector2(450, -110)
+
+[node name="Marker2D8" type="Marker2D" parent="Spawner"]
+position = Vector2(450, -120)
+
+[node name="Marker2D9" type="Marker2D" parent="Spawner"]
+position = Vector2(450, -130)
+
+[node name="Marker2D10" type="Marker2D" parent="Spawner"]
+position = Vector2(300, -50)
+
+[node name="Balls" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Tor7" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_uo23w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tor7"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tor7/StaticBody2D"]
+polygon = PackedVector2Array(-960.039, 539.909, 960.026, 539.974, 959.961, -317.474)
+
+[node name="Teleport" parent="." instance=ExtResource("2_nsth2")]
+position = Vector2(210.298, -55.902)
+scale = Vector2(0.75, 0.75)
+moving = true
+speed = 400
+
+[node name="PointA" parent="Teleport" index="2"]
+position = Vector2(0, -347.87)
+
+[node name="PointB" parent="Teleport" index="3"]
+position = Vector2(0, 186.819)
+
+[node name="ExitPoint" parent="Teleport" index="4"]
+position = Vector2(417.092, -179.717)
+
+[node name="Teleport2" parent="." instance=ExtResource("2_nsth2")]
+position = Vector2(13.8159, -55.902)
+scale = Vector2(0.75, 0.75)
+moving = true
+speed = 500
+
+[node name="PointA" parent="Teleport2" index="2"]
+position = Vector2(0, -347.87)
+
+[node name="PointB" parent="Teleport2" index="3"]
+position = Vector2(0, 186.819)
+
+[node name="ExitPoint" parent="Teleport2" index="4"]
+position = Vector2(679.788, -179.167)
+
+[node name="Teleport3" parent="." instance=ExtResource("2_nsth2")]
+position = Vector2(-149.651, 19.7919)
+scale = Vector2(0.75, 0.75)
+moving = true
+speed = 300
+
+[node name="PointA" parent="Teleport3" index="2"]
+position = Vector2(0, -347.87)
+
+[node name="PointB" parent="Teleport3" index="3"]
+position = Vector2(0, 186.819)
+
+[node name="ExitPoint" parent="Teleport3" index="4"]
+position = Vector2(897.611, -280.757)
+
+[node name="Teleport4" parent="." instance=ExtResource("2_nsth2")]
+position = Vector2(-343.717, 114.812)
+scale = Vector2(0.75, 0.75)
+moving = true
+speed = 200
+
+[node name="PointA" parent="Teleport4" index="2"]
+position = Vector2(0, -347.87)
+
+[node name="PointB" parent="Teleport4" index="3"]
+position = Vector2(0, 186.819)
+
+[node name="ExitPoint" parent="Teleport4" index="4"]
+position = Vector2(1155.83, -407.786)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_x0leq")
+
+[editable path="Teleport"]
+[editable path="Teleport2"]
+[editable path="Teleport3"]
+[editable path="Teleport4"]

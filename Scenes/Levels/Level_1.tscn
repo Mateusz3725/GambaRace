@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpc8y8exqem4u"]
+
+[ext_resource type="Script" uid="uid://cjoncygs0748e" path="res://Scenes/Levels/Level.gd" id="1_qpfou"]
+[ext_resource type="Texture2D" uid="uid://bim6w6xstsrfo" path="res://Assets/Level_1.png" id="3_87l2y"]
+[ext_resource type="PackedScene" uid="uid://c8lvc8ehcqsoj" path="res://Scenes/meta.tscn" id="3_qpfou"]
+[ext_resource type="PackedScene" uid="uid://bgfu28srs74n6" path="res://Objects/teleport.tscn" id="4_ybqp2"]
+[ext_resource type="AudioStream" uid="uid://drg35etfonyt8" path="res://Assets/O_Zgrozo.ogg" id="5_qpfou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyh3f"]
+size = Vector2(22.3803, 990.183)
+
+[node name="Level_1" type="Node2D"]
+script = ExtResource("1_qpfou")
+
+[node name="Teleport2" parent="." instance=ExtResource("4_ybqp2")]
+position = Vector2(-144.761, -49.926)
+scale = Vector2(1.9017, -0.916222)
+moving = true
+
+[node name="PointA" parent="Teleport2" index="2"]
+position = Vector2(0, 340.885)
+
+[node name="PointB" parent="Teleport2" index="3"]
+position = Vector2(0, -269.883)
+
+[node name="ExitPoint" parent="Teleport2" index="4"]
+position = Vector2(-157.912, 264.94)
+
+[node name="Teleport" parent="." instance=ExtResource("4_ybqp2")]
+position = Vector2(369.707, 302.19)
+scale = Vector2(4.97299, -1.01433)
+
+[node name="ExitPoint" parent="Teleport" index="4"]
+position = Vector2(-163.821, 586.427)
+
+[node name="Tor1" type="Sprite2D" parent="."]
+position = Vector2(113.944, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_87l2y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tor1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tor1/StaticBody2D"]
+position = Vector2(791.623, -1.27598)
+shape = SubResource("RectangleShape2D_iyh3f")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tor1/StaticBody2D"]
+polygon = PackedVector2Array(-958.982, -492.487, -947.222, -385.237, -925.584, -254.467, -883.719, -82.3026, -829.153, 64.931, -782.584, 159.01, -745.423, 214.987, -702.617, 267.671, -649.462, 314.711, -606.186, 341.523, -548.328, 364.102, -489.999, 373.51, -424.143, 372.099, -327.712, 346.227, -229.399, 297.776, -148.021, 243.211, -75.11, 187.234, -22.8961, 152.895, 10.0315, 138.783, 32.6105, 134.549, 63.1861, 143.957, 83.8835, 175.474, 93.2914, 209.813, 89.9986, 313.77, 41.0775, 541.441, -959.907, 540)
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(0.157298, -0.00257874)
+
+[node name="Marker2D" type="Marker2D" parent="Spawner"]
+position = Vector2(-429.515, -281.316)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawner"]
+position = Vector2(-424.515, -281.316)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawner"]
+position = Vector2(-419.515, -281.316)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawner"]
+position = Vector2(-414.515, -281.316)
+
+[node name="Marker2D5" type="Marker2D" parent="Spawner"]
+position = Vector2(-409.515, -281.316)
+
+[node name="Marker2D6" type="Marker2D" parent="Spawner"]
+position = Vector2(-429.515, -276.316)
+
+[node name="Marker2D7" type="Marker2D" parent="Spawner"]
+position = Vector2(-424.515, -276.316)
+
+[node name="Marker2D8" type="Marker2D" parent="Spawner"]
+position = Vector2(-419.515, -276.316)
+
+[node name="Marker2D9" type="Marker2D" parent="Spawner"]
+position = Vector2(-414.515, -276.316)
+
+[node name="Marker2D10" type="Marker2D" parent="Spawner"]
+position = Vector2(-409.515, -276.316)
+
+[node name="Balls" type="Node2D" parent="."]
+
+[node name="Meta" parent="." instance=ExtResource("3_qpfou")]
+position = Vector2(428.957, 39.9456)
+scale = Vector2(0.0399951, 0.6)
+moving = true
+speed = 300
+
+[node name="PointA" parent="Meta" index="2"]
+position = Vector2(0, -151.721)
+
+[node name="PointB" parent="Meta" index="3"]
+position = Vector2(0, 158.051)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(113.944, 0)
+scale = Vector2(1.12255, 0.9)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qpfou")
+
+[editable path="Teleport2"]
+[editable path="Teleport"]
+[editable path="Meta"]

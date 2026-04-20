@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="GambaRace"
+run/main_scene="uid://dftorfq1grbv4"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Scripts/GameManager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "teal",
+"res://Objects/": "yellow",
+"res://Prototypowanie/": "gray",
+"res://Scenes/": "blue",
+"res://Scenes/Levels/": "purple",
+"res://Scenes/Racers/": "red",
+"res://Scripts/": "blue",
+"res://Scripts/Racers/": "red"
+}
+
+[global_group]
+
+racer=""
+Teleport=""
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.560784, 0.733333, 1, 1)

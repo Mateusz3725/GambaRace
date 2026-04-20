@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3lbmukfwylv"]
+
+[ext_resource type="Script" uid="uid://bctovtt3v6bkp" path="res://Scripts/Racers/lime.gd" id="1_8aad5"]
+[ext_resource type="Texture2D" uid="uid://dhokmyimtctih" path="res://Assets/RacerOutline.png" id="2_8aad5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8aad5"]
+friction = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_16u8n"]
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["racer"]]
+position = Vector2(-0.282227, 0)
+collision_layer = 5
+physics_material_override = SubResource("PhysicsMaterial_8aad5")
+script = ExtResource("1_8aad5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.764706, 0.960784, 0.313726, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_8aad5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("CircleShape2D_16u8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_16u8n")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

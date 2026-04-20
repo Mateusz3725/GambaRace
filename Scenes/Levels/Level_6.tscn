@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=3 uid="uid://bag54ivpolj5i"]
+
+[ext_resource type="Script" uid="uid://cjoncygs0748e" path="res://Scenes/Levels/Level.gd" id="1_gps55"]
+[ext_resource type="PackedScene" uid="uid://bxjh5ku8oelun" path="res://Objects/takie.tscn" id="2_1rdpw"]
+[ext_resource type="PackedScene" uid="uid://bgfu28srs74n6" path="res://Objects/teleport.tscn" id="2_x426a"]
+[ext_resource type="PackedScene" uid="uid://c8lvc8ehcqsoj" path="res://Scenes/meta.tscn" id="3_gps55"]
+[ext_resource type="Texture2D" uid="uid://cvwihut7mjmmc" path="res://Assets/Racer.png" id="4_5uxs7"]
+[ext_resource type="Texture2D" uid="uid://bqm8p6fladbnn" path="res://Assets/Level_4.png" id="4_61c5p"]
+[ext_resource type="AudioStream" uid="uid://drg35etfonyt8" path="res://Assets/O_Zgrozo.ogg" id="7_gps55"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghp5a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x426a"]
+
+[node name="Level_6" type="Node2D"]
+script = ExtResource("1_gps55")
+
+[node name="Teleport" parent="." instance=ExtResource("2_x426a")]
+position = Vector2(-2.82571, 265.713)
+scale = Vector2(11.063, 0.576585)
+
+[node name="ExitPoint" parent="Teleport" index="4"]
+position = Vector2(-28.3866, -766.282)
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(84.6758, -77.2006)
+
+[node name="Marker2D" type="Marker2D" parent="Spawner"]
+position = Vector2(-432.599, -124.633)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawner"]
+position = Vector2(-370.166, -121.363)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawner"]
+position = Vector2(-446.342, -75.2015)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawner"]
+position = Vector2(-402.909, -105.512)
+
+[node name="Marker2D5" type="Marker2D" parent="Spawner"]
+position = Vector2(-439.337, -33.759)
+
+[node name="Marker2D6" type="Marker2D" parent="Spawner"]
+position = Vector2(-359.181, -82.5825)
+
+[node name="Marker2D7" type="Marker2D" parent="Spawner"]
+position = Vector2(-408.616, -12.7655)
+
+[node name="Marker2D8" type="Marker2D" parent="Spawner"]
+position = Vector2(-374.379, -21.296)
+
+[node name="Marker2D9" type="Marker2D" parent="Spawner"]
+position = Vector2(-344.076, -50.0335)
+
+[node name="Marker2D10" type="Marker2D" parent="Spawner"]
+position = Vector2(-404.461, -151.552)
+
+[node name="Balls" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Meta" parent="." instance=ExtResource("3_gps55")]
+position = Vector2(318.861, 97.8576)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" parent="Meta" index="0"]
+position = Vector2(0.805298, 0)
+scale = Vector2(1, 1)
+texture = ExtResource("4_5uxs7")
+
+[node name="CollisionShape2D" parent="Meta/Area2D" index="0"]
+scale = Vector2(5.04951, 4.92337)
+shape = SubResource("CircleShape2D_ghp5a")
+
+[node name="Tor6" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_61c5p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tor6"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tor6/StaticBody2D"]
+polygon = PackedVector2Array(-896.33, 475.862, 898.583, 476.167, 896.667, -477.5, -898.333, -475.833, -958.555, -539.821, 955.833, -540.833, 958.333, 541.667, -960.02, 540.242, -959.916, -539.551, -897.599, -471.205)
+
+[node name="Takie" parent="." instance=ExtResource("2_1rdpw")]
+position = Vector2(-313.856, -155.973)
+scale = Vector2(2.5, 2.5)
+speed = 100
+
+[node name="Takie2" parent="." instance=ExtResource("2_1rdpw")]
+position = Vector2(-313.856, 91.897)
+scale = Vector2(2.5, 2.5)
+speed = 100
+rev_side = true
+
+[node name="Takie3" parent="." instance=ExtResource("2_1rdpw")]
+position = Vector2(4.97906, -155.973)
+scale = Vector2(2.5, 2.5)
+speed = 100
+
+[node name="Takie4" parent="." instance=ExtResource("2_1rdpw")]
+position = Vector2(4.97894, 91.897)
+scale = Vector2(2.5, 2.5)
+speed = 100
+rev_side = true
+
+[node name="Takie5" parent="." instance=ExtResource("2_1rdpw")]
+position = Vector2(318.723, -150.127)
+scale = Vector2(2.5, 2.5)
+speed = 100
+
+[node name="Takie6" parent="." instance=ExtResource("2_1rdpw")]
+position = Vector2(318.722, 97.7432)
+scale = Vector2(2.5, 2.5)
+speed = 100
+rev_side = true
+
+[node name="Teleport3" parent="." instance=ExtResource("2_x426a")]
+position = Vector2(-313.816, 92.0866)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" parent="Teleport3" index="0"]
+self_modulate = Color(0.0627451, 0.576471, 0.745098, 1)
+texture = ExtResource("4_5uxs7")
+
+[node name="CollisionShape2D" parent="Teleport3" index="1"]
+shape = SubResource("CircleShape2D_x426a")
+
+[node name="ExitPoint" parent="Teleport3" index="4"]
+position = Vector2(213.638, -164.273)
+
+[node name="Teleport4" parent="." instance=ExtResource("2_x426a")]
+position = Vector2(4.41412, 92.0866)
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" parent="Teleport4" index="0"]
+self_modulate = Color(0.0627451, 0.576471, 0.745098, 1)
+texture = ExtResource("4_5uxs7")
+
+[node name="CollisionShape2D" parent="Teleport4" index="1"]
+shape = SubResource("CircleShape2D_x426a")
+
+[node name="ExitPoint" parent="Teleport4" index="4"]
+position = Vector2(210.18, -159.085)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_gps55")
+
+[editable path="Teleport"]
+[editable path="Meta"]
+[editable path="Teleport3"]
+[editable path="Teleport4"]
